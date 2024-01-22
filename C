@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+
+int main() {
+    int N;
+
+    printf("Di quanti numeri dovrà essere composta la serie? ");
+    scanf("%d", &N);
+
+    if (N <= 0) {
+        printf("Numero non valido\n");
+        return 1;
+    }
+
+    int numeri[N];
+    int min, max;
+
+    printf("A questo punto inserisci %d numeri\n", N);
+sleep (2);
+  
+    printf("Inserisci il primo numero: ");
+    scanf("%d", &numeri[0]);
+    min = numeri[0];
+    max = numeri[0];
+
+    for (int i = 1; i < N; ++i) {
+        printf("Inserisci il %d numero: ", i + 1);
+        scanf("%d", &numeri[i]);
+
+        
+        if (numeri[i] < min) {
+            min = numeri[i];
+        }
+        if (numeri[i] > max) {
+            max = numeri[i];
+        }
+    }
+
+    printf("Il numero più piccolo della serie di numeri inserita precedentemente è %d\n", min);
+    sleep(2);
+    printf("Il numero più grande è %d\n", max);
+
+    return 0;
+}
